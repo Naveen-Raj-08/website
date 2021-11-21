@@ -11,14 +11,18 @@ body {
   font-family: "Outfit", sans-serif;
   color: #1f1f11;
   line-height: 1.4;
-  background-color: #fcfaff;
   scroll-behavior: smooth;
+  background: url(../../assets/media/banner-bg.png) no-repeat;
+  background-position: 0 0px;
+  background-size: 100%;
+  height: 2000px;
 }
 
 .header-fixed {
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   padding: 10px 0 !important;
+  background: #fcfaff !important;
 }
 
 .page-wrapper {
@@ -34,7 +38,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #fcfaff;
+  background: transparent;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
