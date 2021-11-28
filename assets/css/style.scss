@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
 // Variables
 $regular: "Outfit";
-$primary: #813afe;
-$secondary: #252525;
+$primary: #3456ff;
+$secondary: #070928;
 $text-content: #a2a2a9;
 
 // Reset Browser default styles
@@ -15,13 +15,39 @@ $text-content: #a2a2a9;
 body {
   font-size: 15px;
   font-family: $regular, sans-serif;
-  color: #1f1f11;
+  color: #f0f0d3;
   line-height: 1.4;
   scroll-behavior: smooth;
-  background: url(../../assets/media/banner-bg.png) no-repeat;
-  background-position: 0 0px;
-  background-size: 100%;
-  height: 2000px;
+  width: 100%;
+}
+
+.page-loading {
+  background-color: $primary;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rippleAnimation {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.3;
+  }
+
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
 }
 
 .header-fixed {
@@ -31,11 +57,6 @@ body {
 }
 
 .page-wrapper {
-  max-width: 1380px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-
   .page-header {
     padding: 20px 0;
     display: block;
@@ -45,7 +66,7 @@ body {
     background: transparent;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 9;
+    z-index: 20;
     transition: padding 0.3s linear;
     .row {
       max-width: 1380px;
@@ -80,8 +101,9 @@ body {
               font-size: 16px;
               text-transform: capitalize;
             }
-
-            a.active {
+          }
+          .active {
+            a {
               color: $primary;
             }
           }
@@ -90,10 +112,35 @@ body {
     }
   }
 
+  main {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .page-banner {
+    background: url(../../assets/media/banner-bg.png) no-repeat;
+    background-position: 0 0px;
+    background-size: 100% 100%;
+    min-height: 100vh;
+  }
+
   .content-wrapper {
+    .container-width {
+      max-width: 1380px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
     .banner-content {
+      max-width: 1380px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 15px;
       min-height: calc(100vh - 100px);
-      margin-top: 80px;
+      padding-top: 80px;
 
       .row {
         align-items: center;
@@ -142,7 +189,7 @@ body {
         }
 
         .btn-action {
-          background-color: #813afe;
+          background-color: $primary;
           color: #fff;
           font-size: 18px;
           border: none;
@@ -150,14 +197,19 @@ body {
           min-width: 120px;
           text-transform: capitalize;
           margin-top: 25px;
-          border: 1px solid $primary;
-          transition: all 0.3s linear;
+          border: none;
+          position: relative;
+          overflow: hidden;
 
-          &:hover {
-            background: #fff;
-            color: $primary;
-            border: 1px solid $primary;
+          span {
+            position: absolute;
+            background-color: #fff;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: rippleAnimation 1s linear infinite;
           }
+
           &:focus {
             outline: none;
             box-shadow: none;
@@ -172,6 +224,237 @@ body {
 
         .right-image {
           min-height: 500px;
+        }
+      }
+    }
+  }
+  .about-section {
+    background: url(../../assets/media/about-bg.png) no-repeat;
+    background-position: 0 0px;
+    background-size: 100% 100%;
+    min-height: 65vh;
+
+    .about-content {
+      padding: 80px 15px;
+      max-width: 1000px;
+
+      .row {
+        .text-center {
+          .title {
+            margin-bottom: 70px;
+            color: $secondary;
+            font-size: 32px;
+          }
+        }
+        .nav-tabs {
+          border: none;
+
+          button {
+            font-size: 15px;
+            color: $text-content;
+            padding: 7px 20px;
+            line-height: 1.1;
+            border: none;
+          }
+
+          button.active {
+            box-shadow: 2px 2px 20px -6px rgba(0, 0, 0, 0.45);
+            color: $primary;
+          }
+        }
+
+        .tabs-section {
+          color: $text-content;
+          font-size: 16px;
+          .role {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #070928;
+          }
+          .actions {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            .btn-downloadcv {
+              background: transparent;
+              color: #fff;
+              padding: 10px 0px;
+              border-radius: 4px;
+              line-height: 1.1;
+              margin-right: 40px;
+              min-width: 150px;
+              text-align: center;
+              position: relative;
+              z-index: 9;
+              overflow: hidden;
+              border: 1px solid $primary;
+              transition: all 0.3s ease-in-out;
+
+              &:hover {
+                color: $primary;
+                &:before {
+                  top: -100px;
+                }
+              }
+
+              &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: $primary;
+                border: 1px solid $primary;
+                z-index: -1;
+                transition: all 0.3s ease-in-out;
+              }
+            }
+
+            .more-about {
+              background: transparent;
+              color: #fff;
+              padding: 10px 0px;
+              border-radius: 4px;
+              line-height: 1.1;
+              position: relative;
+              min-width: 150px;
+              text-align: center;
+              z-index: 9;
+              overflow: hidden;
+              border: 1px solid $secondary;
+              transition: all 0.3s ease-in-out;
+
+              &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: $secondary;
+                border: 1px solid $secondary;
+                z-index: -1;
+                transition: all 0.3s ease-in-out;
+              }
+
+              &:hover {
+                color: $secondary;
+                &:before {
+                  top: 200px;
+                }
+              }
+            }
+
+            button {
+              &:focus {
+                box-shadow: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .services-section {
+    padding: 50px 0;
+
+    .section-title {
+      margin: 30px 0 50px 0;
+      .title {
+        margin-bottom: 70px;
+        color: $secondary;
+        font-size: 32px;
+      }
+    }
+
+    .row {
+      max-width: 980px;
+      margin: 0 auto;
+      .col-md-4 {
+        .service-card {
+          min-height: 280px;
+          padding: 20px;
+          border-radius: 4px;
+          border: none;
+          background: #fff;
+          box-shadow: 2px 2px 30px -5px rgba(0, 0, 0, 0.32);
+          transition: all 0.3s ease-in-out;
+          position: relative;
+
+          .title {
+            font-size: 34px;
+            color: #070928;
+            line-height: 1.1;
+            margin-bottom: 20px;
+          }
+
+          .description {
+            color: $secondary;
+            font-size: 16px;
+          }
+
+          .service-actions {
+            position: absolute;
+            width: 100%;
+            bottom: 20px;
+            left: 20px;
+
+            .btn-more {
+              background: transparent;
+              color: $secondary;
+              font-size: 16px;
+              border: none;
+              padding-right: 50px;
+              position: relative;
+              text-decoration: none;
+
+              * {
+                line-height: 10px;
+              }
+
+              span {
+                position: absolute;
+                right: 25px;
+                top: 8px;
+                color: $secondary;
+                transition: all 0.3s ease-in-out;
+                opacity: 0.8;
+              }
+
+              &:before {
+                content: "";
+                position: absolute;
+              }
+            }
+          }
+
+          &:hover {
+            background: $primary;
+
+            .title {
+              color: #fff;
+            }
+
+            .description {
+              color: #fff;
+            }
+
+            .btn-more {
+              color: #fff;
+
+              span {
+                color: #fff;
+              }
+              span {
+                right: 10px;
+              }
+            }
+          }
         }
       }
     }
