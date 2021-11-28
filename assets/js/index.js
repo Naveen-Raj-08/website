@@ -44,12 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
       duration: 1,
       y: -100,
       stagger: 0.6,
-      delay: 1.4,
+      delay: 2.5,
     });
 
     var rule = CSSRulePlugin.getRule(
       ".page-wrapper .content-wrapper .banner-content .text-content .reveal-text::after"
     );
-    gsap.to(rule, { cssRule: { scaleY: 0 }, duration: 1 });
+    gsap.to(rule, { cssRule: { scaleY: 0 }, duration: 1, delay: 1.5 });
   });
 });
