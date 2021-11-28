@@ -31,9 +31,25 @@ button.forEach((btn) => {
   });
 });
 
-var pageLoading = document.querySelector(".page-loading");
-window.addEventListener("load", function (e) {
-  setTimeout(() => {
-    pageLoading.style.display = "none";
-  }, 2000);
+document.addEventListener("DOMContentLoaded", function () {
+  var pageLoading = document.querySelector(".page-loading");
+
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      pageLoading.style.display = "none";
+    }, 1500);
+
+    gsap.from(".animate-text", {
+      opacity: 0,
+      duration: 1,
+      y: -100,
+      stagger: 0.6,
+      delay: 1.4,
+    });
+
+    var rule = CSSRulePlugin.getRule(
+      ".page-wrapper .content-wrapper .banner-content .text-content .reveal-text::after"
+    );
+    gsap.to(rule, { cssRule: { scaleY: 0 }, duration: 1 });
+  });
 });

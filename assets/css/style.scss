@@ -20,8 +20,7 @@ body {
   scroll-behavior: smooth;
   width: 100%;
 }
-
-.page-loading {
+body .page-loading {
   background-color: $primary;
   width: 100vw;
   height: 100vh;
@@ -150,6 +149,7 @@ body {
           color: $primary;
           font-weight: 800;
           margin-bottom: 0;
+          width: fit-content;
         }
 
         .text-name {
@@ -158,6 +158,7 @@ body {
           font-weight: 900;
           text-transform: capitalize;
           margin-bottom: 0;
+          width: fit-content;
 
           span {
             color: $secondary;
@@ -169,6 +170,7 @@ body {
           color: $secondary;
           text-transform: capitalize;
           font-weight: 900;
+          width: fit-content;
 
           span {
             position: relative;
@@ -224,6 +226,23 @@ body {
 
         .right-image {
           min-height: 500px;
+        }
+      }
+      .text-content {
+        .reveal-text {
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            transform-origin: 100% 0;
+            background-color: #fff;
+          }
         }
       }
     }
