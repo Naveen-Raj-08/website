@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", function () {
     setTimeout(() => {
       pageLoading.style.display = "none";
-    }, 1500);
+    }, 800);
 
     gsap.from(".animate-text", {
       opacity: 0,
