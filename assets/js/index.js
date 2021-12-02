@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.from(".animate-text", {
       opacity: 0,
       duration: 1,
-      y: -100,
+      y: -50,
       stagger: 0.6,
       delay: 2.5,
     });
