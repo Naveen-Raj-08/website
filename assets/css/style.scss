@@ -12,6 +12,31 @@ $text-content: #a2a2a9;
   box-sizing: border-box;
 }
 
+@keyframes rippleAnimation {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.3;
+  }
+
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+@keyframes up-and-down {
+  to {
+    opacity: 0.2;
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+  }
+}
+
 body {
   font-size: 15px;
   font-family: $regular, sans-serif;
@@ -33,19 +58,31 @@ body .page-loading {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-@keyframes rippleAnimation {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0.3;
-  }
-
-  100% {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
+  .load {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    div {
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      margin: 0 5px;
+      animation-name: up-and-down;
+      animation-duration: 0.9s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    .two {
+      animation-delay: 0.3s;
+    }
+    .three {
+      animation-delay: 0.6s;
+    }
   }
 }
 
@@ -231,6 +268,7 @@ body .page-loading {
       .text-content {
         .reveal-text {
           position: relative;
+          background-color: #fff;
 
           &::after {
             content: "";
