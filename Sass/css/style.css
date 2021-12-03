@@ -341,7 +341,7 @@ body .page-loading .load .three {
   background: url(../../assets/media/about-bg.png) no-repeat;
   background-position: 0 0px;
   background-size: 100% 100%;
-  min-height: 65vh;
+  min-height: 90vh;
 }
 
 .page-wrapper .about-section .about-content {
@@ -485,6 +485,7 @@ body .page-loading .load .three {
 
 .page-wrapper .services-section {
   padding: 50px 0;
+  min-height: 90vh;
 }
 
 .page-wrapper .services-section .section-title {
@@ -508,8 +509,8 @@ body .page-loading .load .three {
   border-radius: 4px;
   border: none;
   background: #fff;
-  -webkit-box-shadow: 2px 2px 30px -5px rgba(0, 0, 0, 0.32);
-          box-shadow: 2px 2px 30px -5px rgba(0, 0, 0, 0.32);
+  -webkit-box-shadow: 1px 1px 33px -5px rgba(0, 0, 0, 0.18);
+          box-shadow: 1px 1px 33px -5px rgba(0, 0, 0, 0.18);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -585,5 +586,60 @@ body .page-loading .load .three {
 
 .page-wrapper .services-section .row .col-md-4 .service-card:hover .btn-more span {
   right: 10px;
+}
+
+.page-wrapper .contact-section {
+  width: 100%;
+  background-color: #3456ff;
+  min-height: 330px;
+  margin-bottom: 100px;
+}
+
+.page-wrapper .contact-section .container-width .contact-card {
+  background-color: #fff;
+  max-width: 950px;
+  width: 100%;
+  min-height: 250px;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 140px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 33px -5px rgba(52, 86, 255, 0.32);
+          box-shadow: 1px 1px 33px -5px rgba(52, 86, 255, 0.32);
+}
+
+.page-wrapper .contact-section .container-width .contact-card .title {
+  color: #070928;
+  font-size: 32px;
+}
+
+.page-wrapper .contact-section .container-width .contact-card .btn-contact-me {
+  margin-top: 50px;
+  background: #070928;
+  color: #fff;
+  padding: 10px 0px;
+  border-radius: 4px;
+  line-height: 1.1;
+  position: relative;
+  min-width: 150px;
+  text-align: center;
+  z-index: 9;
+  overflow: hidden;
+  border: 1px solid #070928;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */

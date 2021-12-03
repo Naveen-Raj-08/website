@@ -289,7 +289,7 @@ body .page-loading {
     background: url(../../assets/media/about-bg.png) no-repeat;
     background-position: 0 0px;
     background-size: 100% 100%;
-    min-height: 65vh;
+    min-height: 90vh;
 
     .about-content {
       padding: 80px 15px;
@@ -419,6 +419,7 @@ body .page-loading {
 
   .services-section {
     padding: 50px 0;
+    min-height: 90vh;
 
     .section-title {
       margin: 30px 0 50px 0;
@@ -439,7 +440,7 @@ body .page-loading {
           border-radius: 4px;
           border: none;
           background: #fff;
-          box-shadow: 2px 2px 30px -5px rgba(0, 0, 0, 0.32);
+          box-shadow: 1px 1px 33px -5px rgba(0, 0, 0, 0.18);
           transition: all 0.3s ease-in-out;
           position: relative;
 
@@ -512,6 +513,52 @@ body .page-loading {
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  .contact-section {
+    width: 100%;
+    background-color: $primary;
+    min-height: 330px;
+    margin-bottom: 100px;
+
+    .container-width {
+      .contact-card {
+        background-color: #fff;
+        max-width: 950px;
+        width: 100%;
+        min-height: 250px;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 140px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 33px -5px rgba(52, 86, 255, 0.32);
+
+        .title {
+          color: $secondary;
+          font-size: 32px;
+        }
+
+        .btn-contact-me {
+          margin-top: 50px;
+          background: $secondary;
+          color: #fff;
+          padding: 10px 0px;
+          border-radius: 4px;
+          line-height: 1.1;
+          position: relative;
+          min-width: 150px;
+          text-align: center;
+          z-index: 9;
+          overflow: hidden;
+          border: 1px solid $secondary;
+          transition: all 0.3s ease-in-out;
         }
       }
     }
